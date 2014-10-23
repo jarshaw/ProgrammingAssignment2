@@ -1,14 +1,8 @@
+## The function will calculate the inverse of a square matrix, store it to memory and can 
+## check to see if it has already been calculated from which it will pull it from memory
 
 ## makeCacheMatris
-## This function will calculate the inverse of a matrix and store to memory.
-
-## cacheSolve
-## This function will check to see if the inverse of a matrix has been found
-## If it has, then it will not recalculate it, but will pull it from memory
-## If any of the data in the matrix has changed the inverse will be re-done
-## If the inverse has not been found (not in memory) then it will be 
-
-##Function creates a matrix object that can calculate and cache its inverse
+## This function creates a matrix object that can calculate and cache its inverse
 makeCacheMatrix <- function(X = matrix()) {
     inv <- NULL
     ## Inverse is set to NULL
@@ -26,7 +20,12 @@ makeCacheMatrix <- function(X = matrix()) {
          getinverse = getinverse)
 }
 
-## Return a matrix that is the inverse of the X matrix
+
+## cacheSolve
+## This function will check to see if the inverse of a matrix object has been calculated
+## If it has, then it will not recalculate it, but will pull it from memory (cache)
+## If any of the data in the matrix has changed the inverse will be re-calculated and cached
+## If the inverse has not been cacluated previously then it will be 
 cacheSolve <- function(X, ...) {
     inv <- X$getinverse()
     ## If Inverse has already been calculated and is not different, 
